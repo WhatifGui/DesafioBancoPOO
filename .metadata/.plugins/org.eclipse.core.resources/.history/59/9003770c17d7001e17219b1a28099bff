@@ -1,0 +1,7 @@
+
+public class Caneta {
+	
+	private String modelo;
+	private String cor;
+
+}

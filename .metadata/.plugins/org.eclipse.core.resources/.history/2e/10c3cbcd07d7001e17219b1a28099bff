@@ -1,0 +1,14 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main (String[] args) {
+		Caneta c1 = new Caneta();
+		Scanner sc = new Scanner();
+		
+		
+		c1.setModelo();
+		c1.status();
+		
+	}
+
+}

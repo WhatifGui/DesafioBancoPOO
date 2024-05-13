@@ -1,0 +1,16 @@
+package resumo;
+
+public class caneta {
+
+	private double ponta;
+	private String marca;
+	private int carga;
+	
+	
+	public Caneta(Double )
+	
+	public setPonta() {
+		this.setPonta(d);
+	}
+	
+}

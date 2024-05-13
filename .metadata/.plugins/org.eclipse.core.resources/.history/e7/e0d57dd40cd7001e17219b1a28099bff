@@ -1,0 +1,16 @@
+
+public class Caneta {
+	
+	private String modelo;
+	private String cor;
+	private double ponta;
+	private boolean tampada;
+	
+	public void setModelo() {
+		
+	}
+	
+	
+	
+	
+}

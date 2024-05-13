@@ -1,0 +1,25 @@
+
+public class Caneta {
+
+	public String Modelo;
+	private float Ponta;
+	
+	
+	public String getModelo() {
+		return Modelo;
+	}
+	
+	public String setModelo(m) {
+		Modelo = m;
+		return m;
+	}
+	public float getPonta() {
+		return Ponta;
+	}
+	public setPonta(p) {
+		Ponta = p;
+		return p;
+	}
+	
+	
+}

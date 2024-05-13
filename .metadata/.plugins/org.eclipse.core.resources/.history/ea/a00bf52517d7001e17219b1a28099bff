@@ -1,0 +1,17 @@
+
+public class Caneta {
+	
+	private String modelo;
+	private String cor;
+	private double ponta;
+	
+	
+	public Caneta() {
+		
+	}
+	
+	public void setModelo(String m) {
+		this.modelo = m;
+	}
+
+}

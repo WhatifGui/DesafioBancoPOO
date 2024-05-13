@@ -1,0 +1,16 @@
+
+
+public class Main {
+	public static void main (String[] args) {
+		Caneta c1 = new Caneta();	
+		
+		String m;
+		double p;
+		
+		
+		c1.setAtributos("BIC CRYSTAL", 1.0);
+		c1.status();
+		
+	}
+
+}

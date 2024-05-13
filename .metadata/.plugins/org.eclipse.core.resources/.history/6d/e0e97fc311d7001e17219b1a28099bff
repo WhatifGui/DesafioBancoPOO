@@ -1,0 +1,6 @@
+
+
+public class Main {
+	
+	Caneta c1 = new Caneta("BIC", "Vermelha", 0.5, true);
+}

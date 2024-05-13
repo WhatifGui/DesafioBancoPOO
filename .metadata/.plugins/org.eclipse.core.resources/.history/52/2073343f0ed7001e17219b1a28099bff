@@ -1,0 +1,6 @@
+
+
+public class Main {
+	
+	Caneta c1 = new caneta();
+}

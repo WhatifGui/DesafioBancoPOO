@@ -1,0 +1,56 @@
+
+public class Caneta {
+	
+	private String modelo;
+	private String cor;
+	private double ponta;
+	private boolean tampada;
+	
+	
+	
+	public Caneta() {
+		
+	}
+	
+	public void setModelo(String m) {
+		this.modelo = m;	
+	}
+	
+	public String getModelo(String m) {
+		
+		return m;
+	}
+	
+	public void setCor() {
+		
+	}
+	
+	public String getCor(String c) {
+		
+		this.cor = c;
+		
+		return c;		
+	}
+	
+	public void setPonta() {
+		
+	}
+	
+	public double getPonta(Double p) {
+		
+		return p;
+	}
+	
+	public void setTampada() {
+		
+	}
+	
+	public boolean getTampada(boolean t) {
+		
+		return t;
+	}
+	
+	
+	
+	
+}

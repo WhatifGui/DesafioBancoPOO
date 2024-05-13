@@ -1,0 +1,11 @@
+
+public class Caneta {
+	
+	public String modelo;
+	
+	
+	public void status() {
+		System.out.print();
+	}
+	
+}

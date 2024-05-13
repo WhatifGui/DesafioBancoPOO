@@ -1,0 +1,36 @@
+import java.util.Scanner;
+public class Caneta {
+	Scanner sc = new Scanner(System.in);
+	private String Modelo;
+	private float Ponta;
+	
+	
+	
+	
+	public String getModelo() {
+		return this.Modelo;
+	}
+	
+	public void setModelo(String M) {
+		System.out.println("Qual o nome da caneta? ");
+		m = sc.next();
+		
+		this.Modelo = m;
+	}
+	public float getPonta() {
+		return Ponta;
+	}
+	public void setPonta(float p) {
+		this.Ponta = p;
+	}
+	
+	public void status() {
+		System.out.println("MODELO = " + this.getModelo());
+	}
+	
+	public void setAtributos(String m, double p) {
+		
+	}
+	
+	
+}

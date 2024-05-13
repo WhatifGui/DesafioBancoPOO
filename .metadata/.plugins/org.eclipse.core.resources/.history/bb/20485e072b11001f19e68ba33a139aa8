@@ -1,0 +1,7 @@
+package resumo;
+
+public class caneta {
+
+	ponta = double;
+	
+}

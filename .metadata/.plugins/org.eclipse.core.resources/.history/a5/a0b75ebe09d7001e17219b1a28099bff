@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main (String[] args) {
+		Scanner sc = new Scanner(System.in);
+		Caneta c1 = new Caneta();
+		
+		System.out.println("Digite o modelo: ");
+		m = sc.next();
+		System.out.println();
+		
+		c1.setAtributos();
+		c1.status();
+		
+	}
+
+}

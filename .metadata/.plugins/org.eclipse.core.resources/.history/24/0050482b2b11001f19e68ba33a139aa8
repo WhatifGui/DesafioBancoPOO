@@ -1,0 +1,8 @@
+package resumo;
+
+public class caneta {
+
+	private ponta double;
+	private marca String;
+	
+}

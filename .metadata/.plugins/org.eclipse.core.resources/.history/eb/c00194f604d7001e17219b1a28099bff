@@ -1,0 +1,15 @@
+
+public class Caneta {
+	
+	public String modelo;
+	private
+	
+	
+	public setmodelo(m) {
+		
+	}
+	public void status() {
+		System.out.print("MODELO = "+ this.modelo);
+	}
+	
+}
