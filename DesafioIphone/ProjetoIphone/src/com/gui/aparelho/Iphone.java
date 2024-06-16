@@ -10,8 +10,8 @@ import java.util.Scanner;
 public class Iphone implements Telefone, NavegadorInternet, ReprodutorMusical {
 
 	private int varAba;
-	private int abaAbertaAnonima;
-	private int abaAbertaComum;
+	private boolean abaAbertaAnonima;
+	private boolean abaAbertaComum;
 	private boolean correioVoz;
 	private boolean musicaTocando;
 	private String musicasCelular[];
@@ -34,11 +34,11 @@ public class Iphone implements Telefone, NavegadorInternet, ReprodutorMusical {
 			// FLUXO PARA QUAL ABA ABRIR
 			if (varAba == 1) {
 				System.out.println("ABRINDO ABA ANONIMA.");
-				setAbaAbertaAnonima(1);
+				setAbaAbertaAnonima();
 			}
 			else {
 				System.out.println("ABRINDO ABA COMUM.");
-				setAbaAbertaComum(1);
+				setAbaAbertaComum();
 			}
 		} catch (ParametrosExceptions exception) {
 			System.out.println("Não foi possivel identificar. Por gentileza selecione no menu o valor 1 ou 2.");
@@ -72,7 +72,7 @@ public class Iphone implements Telefone, NavegadorInternet, ReprodutorMusical {
 	}
 	@Override
 	public void atualizarPagina() {
-		if(abaAbertaComum == 1 && abaAbertaAnonima == 1) {
+		if(abaAbertaComum == true || abaAbertaAnonima == true) {
 			System.out.println("ATUALIZANDO A PAGINA");
 		}else {
 			System.out.println("NÃO HÁ A PAGINAS A SER ATUALIZADA.");
@@ -81,7 +81,7 @@ public class Iphone implements Telefone, NavegadorInternet, ReprodutorMusical {
 	}
 	@Override
 	public void exibirPagina() {
-		if(abaAbertaComum == 1 && abaAbertaAnonima == 1) {
+		if(abaAbertaComum == true || abaAbertaAnonima == true) {
 			System.out.println("EXIBINDO PAGINA");
 		}else {
 			System.out.println("NÃO HÁ A PAGINAS A SER EXIBIDA.");
@@ -116,6 +116,9 @@ public class Iphone implements Telefone, NavegadorInternet, ReprodutorMusical {
 		if (musicaTocando == true) {
 			System.out.println("MUSICA PAUSADA");
 		}else {
+			System.out.println("NÃO HÁ MUSICAS TOCANDO");
+			System.out.println(" ");
+			tocar();
 			System.out.println("MUSICA INICIADA.");
 		}
 		
@@ -128,11 +131,11 @@ public class Iphone implements Telefone, NavegadorInternet, ReprodutorMusical {
 	@Override
 	public void tocar() {
 		if (musicasCelular != null) {
-			System.out.println("Escolhar uma musica: ");
+			System.out.println("Escolha uma musica: ");
 			int j = 0;
 			for (int i = 0; i <= 2; i++) {
-				
-				System.out.println("Musica "+( j + j++) + musicasCelular[i]);
+				j++;
+				System.out.println("Musica "+(j) +": "+musicasCelular[i]);
 			}
 			System.out.println("Selecione o numero da música: ");
 			int option = leitor.nextInt();
@@ -141,19 +144,26 @@ public class Iphone implements Telefone, NavegadorInternet, ReprodutorMusical {
 			case 1:
 				System.out.println("Tocando Sweet Child Mine.");
 				setMusicasTocando();
+				break;
 			case 2: 
 				System.out.println("Tocando Eis me aqui");
 				setMusicasTocando();
+				break;
 			case 3:
 				System.out.println("Rude Cruz");
 				setMusicasTocando();
+				break;
 			default:
 				System.out.println("NÃO EXISTEM MAIS MÚSICAS");
 				break;
 			}
+		
+			}else {
+				System.out.println("NÃO HÁ MUSICAS.");
+			}
 		}
 		
-	}
+
 	
 	public static void testarAba(int varAba) throws ParametrosExceptions {
 		if (varAba != 1 && varAba != 2) {
@@ -161,18 +171,18 @@ public class Iphone implements Telefone, NavegadorInternet, ReprodutorMusical {
 		}
 	}
 
-	public int getAbaAbertaComum() {
+	public boolean getAbaAbertaComum() {
 		return abaAbertaComum;
 	}
 
-	public void setAbaAbertaComum(int abaAbertaComum) {
-		this.abaAbertaComum = abaAbertaComum;
+	public void setAbaAbertaComum() {
+		this.abaAbertaComum = true;
 	}
-	public int getAbaAbertaAnonima() {
+	public boolean getAbaAbertaAnonima() {
 		return abaAbertaAnonima;
 	}
-	public void setAbaAbertaAnonima(int abaAbertaAnonima) {
-		this.abaAbertaAnonima = abaAbertaAnonima;
+	public void setAbaAbertaAnonima() {
+		this.abaAbertaAnonima = true;
 	}
 	public boolean getCorreioVoz() {
 		return correioVoz;
