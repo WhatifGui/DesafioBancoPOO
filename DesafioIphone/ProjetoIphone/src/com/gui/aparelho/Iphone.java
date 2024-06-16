@@ -13,7 +13,8 @@ public class Iphone implements Telefone, NavegadorInternet, ReprodutorMusical {
 	private int abaAbertaAnonima;
 	private int abaAbertaComum;
 	private boolean correioVoz;
-	
+	private boolean musicaTocando;
+	private String musicasCelular[];
 	Scanner leitor = new Scanner(System.in);
 	
 
@@ -71,37 +72,86 @@ public class Iphone implements Telefone, NavegadorInternet, ReprodutorMusical {
 	}
 	@Override
 	public void atualizarPagina() {
-		// TODO Auto-generated method stub
+		if(abaAbertaComum == 1 && abaAbertaAnonima == 1) {
+			System.out.println("ATUALIZANDO A PAGINA");
+		}else {
+			System.out.println("NÃO HÁ A PAGINAS A SER ATUALIZADA.");
+		}
 		
 	}
 	@Override
 	public void exibirPagina() {
-		// TODO Auto-generated method stub
-		
+		if(abaAbertaComum == 1 && abaAbertaAnonima == 1) {
+			System.out.println("EXIBINDO PAGINA");
+		}else {
+			System.out.println("NÃO HÁ A PAGINAS A SER EXIBIDA.");
+		}
 	}
 	@Override
 	public void iniciarCorreioVoz() {
-		// TODO Auto-generated method stub
+		if (correioVoz == true) {
+			System.out.println("Inicializando correio de voz.");
+		}else {
+			System.out.println("Não há correio de voz.");
+		}
 		
 	}
 	@Override
-	public void ligar() {
-		// TODO Auto-generated method stub
-		
+	public void ligar() throws ParametrosExceptions {
+		try {
+			// MENU LIGAÇÃO
+			System.out.println("Digite o número");
+			String telefone = leitor.nextLine();
+			
+			// CHAMADA FUNÇÃO VALIDAÇÃO DE NUMEROS
+			formatacaoNumero(telefone);
+			
+		} catch (ParametrosExceptions exception) {
+			System.out.println("Quantidade de números errados.");
+			System.out.println("Deverá ter 11 numeros. Seguindo o modelo (DD) 9 XXXX-XXXX");
+		}
 	}
-	@Override
+	
 	public void pausar() {
-		// TODO Auto-generated method stub
+		if (musicaTocando == true) {
+			System.out.println("MUSICA PAUSADA");
+		}else {
+			System.out.println("MUSICA INICIADA.");
+		}
 		
 	}
 	@Override
 	public void selecionarMusica() {
-		// TODO Auto-generated method stub
+		getMusicasCelular();
 		
 	}
 	@Override
 	public void tocar() {
-		// TODO Auto-generated method stub
+		if (musicasCelular != null) {
+			System.out.println("Escolhar uma musica: ");
+			int j = 0;
+			for (int i = 0; i <= 2; i++) {
+				
+				System.out.println("Musica "+( j + j++) + musicasCelular[i]);
+			}
+			System.out.println("Selecione o numero da música: ");
+			int option = leitor.nextInt();
+			
+			switch (option) {
+			case 1:
+				System.out.println("Tocando Sweet Child Mine.");
+				setMusicasTocando();
+			case 2: 
+				System.out.println("Tocando Eis me aqui");
+				setMusicasTocando();
+			case 3:
+				System.out.println("Rude Cruz");
+				setMusicasTocando();
+			default:
+				System.out.println("NÃO EXISTEM MAIS MÚSICAS");
+				break;
+			}
+		}
 		
 	}
 	
@@ -131,5 +181,32 @@ public class Iphone implements Telefone, NavegadorInternet, ReprodutorMusical {
 		this.correioVoz = correioVoz;
 	}
 	
+	public static void formatacaoNumero(String telefone) throws ParametrosExceptions {
+		if (telefone.length() != 11) {
+			throw new ParametrosExceptions();
+		}
+	}
+	public String[] getMusicasCelular() {
+		for(int i = 0;  ;i++) {
+			System.out.println("Musica: "+ musicasCelular[i]);
+			if(i >= 2) {
+				break;
+			}
+		}
+		
+		return musicasCelular;
+	}
+	public void setMusicasCelular() {
+		String newMusicas[] = {"Sweet Child Mine", "Eis me aqui", "Rude Cruz"};
+		this.musicasCelular = newMusicas;
+	}
+	
+	public void setMusicasTocando() {
+		this.musicaTocando = true;
+	}
+	
+	public boolean getMusicasTocando() {
+		return musicaTocando;
+	}
 	
 }

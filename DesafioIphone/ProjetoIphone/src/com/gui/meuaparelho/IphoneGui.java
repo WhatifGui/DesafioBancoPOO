@@ -7,6 +7,8 @@ public class IphoneGui {
 	public static void main(String[] args) throws ParametrosExceptions {
 		Iphone igui = new Iphone();
 		
-		igui.adicionarNovaAba();
+		// igui.adicionarNovaAba();
+		igui.setMusicasCelular();
+		igui.getMusicasCelular();
 	}
 }
