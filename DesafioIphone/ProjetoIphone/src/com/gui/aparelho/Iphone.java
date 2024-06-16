@@ -106,6 +106,8 @@ public class Iphone implements Telefone, NavegadorInternet, ReprodutorMusical {
 			// CHAMADA FUNÇÃO VALIDAÇÃO DE NUMEROS
 			formatacaoNumero(telefone);
 			
+			System.out.println("CHAMANDO...");
+			
 		} catch (ParametrosExceptions exception) {
 			System.out.println("Quantidade de números errados.");
 			System.out.println("Deverá ter 11 numeros. Seguindo o modelo (DD) 9 XXXX-XXXX");
