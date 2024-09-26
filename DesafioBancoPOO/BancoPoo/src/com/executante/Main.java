@@ -5,6 +5,7 @@ import com.tiposcontas.*;
 
 public class Main {
 	public static void main(String[] args) {
+		// Instanciamento
 		ContasCorrente gui = new ContasCorrente("Luiz Guilherme");
 		ContaPoupança guipp = new ContaPoupança("Guilherme");
 		gui.depositarDin(100);
